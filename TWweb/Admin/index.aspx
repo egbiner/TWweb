@@ -34,6 +34,7 @@
                         { %>
                     <dd><a href="#" id="scroll_img">首页滚动图设置</a></dd>
                     <dd><a href="#" id="url_add">友情链接管理</a></dd>
+                    <dd><a href="#" id="yanyiting_manage">演艺厅管理</a></dd>
                     <%} %>
                     <dd><a href="#" id="pwd_change">修改密码</a></dd>
                 </dl>

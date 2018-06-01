@@ -55,7 +55,7 @@
 
                     <li><a href="news_list.aspx?news_type=8">文件下载</a>
                     </li>
-					<li><a href="Web/news_list.aspx?news_type=31">演艺厅</a></li>
+					<li><a href="yanyiting.aspx">演艺厅</a></li>
 
 					<li><a href="#">规章制度</a>
                         <ul>

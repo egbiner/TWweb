@@ -11,6 +11,12 @@ namespace TWweb.Admin
         public string key_s = "";
         protected void Page_Load(object sender, EventArgs e)
         {
+            object username = Session["admin"];
+            if (username == null)
+            {
+                Response.Redirect("index.aspx");
+                return;
+            }
             object page_num_ob = Request["page_num"];
             if (page_num_ob != null)
             {

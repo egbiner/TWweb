@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="news_list.aspx.cs" Inherits="TWweb.Web.news_list" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="yanyiting.aspx.cs" Inherits="TWweb.Web.yanyiting" %>
 
 <!DOCTYPE html>
 
@@ -10,7 +10,22 @@
     <title>共青团桂林电子科技大学委员会</title>
     <link href="css/stylenewslist.css" rel="stylesheet" />
     <script src="../Admin/js/jquery-3.0.0.min.js"></script>
-    <script src="js/news_list_select.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".menu a").click(function () {
+                $(".menu a").removeClass("active");
+                $(this).addClass("active");
+                if ($(this).attr('id')==3)
+                    document.getElementById("iframe1").src = "apply_search.aspx";
+                else if ($(this).attr('id')==2)
+                    document.getElementById("iframe1").src = "applyform.aspx";
+                else if ($(this).attr('id')==1)
+                    document.getElementById("iframe1").src = "activities_list.aspx";
+                else
+                    document.getElementById("iframe1").src = "<%="news_list_iframe.aspx?page_num=" + page_num + "&news_type=31" %>";
+            });
+        });
+    </script>
     <script type="text/javascript" charset="UTF-8" src="js/prefixfree.min.js"></script>
 </head>
 <body>
@@ -86,25 +101,19 @@
             <div class="place">
                 当前位置：
                 <a href="../index.aspx">首页</a>>>
-        		<a href="javascript:void(0);"><%=nav_name %></a>>>
-                <%for (int i = 0; i < t_news_type.Rows.Count; i++)
+        		<a href="javascript:void(0);">演艺厅</a>
 
-                    { %>
-                <%if (t_news_type.Rows[i]["id"].ToString() == news_type)
-                    {%>
-                <a id="a_pos" href="javascript:void(0);"><%=t_news_type.Rows[i]["type_name"].ToString() %></a><%}
-                }%>
             </div>
             <div class="line"></div>
 
             <div class="sidebar">
                 <div class="menu">
                     <ul>
-                        <li class="menu-tit"><%=nav_name %></li>
-                        <%for (int i = 0; i < t_news_type.Rows.Count; i++)
-                            {%>
-                        <li><a href="javascript:void(0);" id="<%=t_news_type.Rows[i]["id"] %>" class="<%=t_news_type.Rows[i]["id"].ToString()==news_type?"active":"" %>"><%=t_news_type.Rows[i]["type_name"] %></a></li>
-                        <%} %>
+                        <li class="menu-tit">演艺厅</li>
+                        <li><a id="1" href="javascript:void(0);" class="active">活动预告</a></li>
+                         <li><a id="2" href="javascript:void(0);" class="">在线申请</a></li>
+                         <li><a id="3" href="javascript:void(0);" class="">申请查询</a></li>
+                         <li><a id="4" href="javascript:void(0);" class="">其他信息</a></li>
                     </ul>
                 </div>
                 <div class="new">
@@ -122,13 +131,7 @@
                 </div>
             </div>
             <div class="main">
-                <iframe class="content" id="iframe1" onload="setIframeHeight(this)" scrolling="no" style="width: 100%;" frameborder="0" src="
-                    <%if (news_type == "23" || news_type == "24"||news_type=="29"||news_type=="34"||news_type=="35"||news_type=="36")
-                    {%><%="introduction.aspx?type_id="+news_type %>
-                    <%} %>
-                    <%else { %>
-                    <%="news_list_iframe.aspx?page_num=" + page_num + "&news_type=" + news_type %>
-                    <%} %>"></iframe>
+                <iframe class="content" id="iframe1" onload="setIframeHeight(this)" scrolling="no" style="width: 100%;" frameborder="0" src="activities_list.aspx"></iframe>
                 <script>
                     function setIframeHeight(iframe) {
                         iframe.height = 600;
@@ -183,6 +186,5 @@
 
         </div>
     </div>
-
 </body>
 </html>
