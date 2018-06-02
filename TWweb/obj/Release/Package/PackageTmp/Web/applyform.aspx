@@ -34,21 +34,21 @@ $(function(){
     <legend>基本信息</legend>
     <div class="row">
       <label>1. 申请人:</label>
-      <input id="ap_user" class="txt" type="text" name="ap_user" value="申请人测试"/>
+      <input id="ap_user" class="txt" type="text" name="ap_user" />
 
     </div>
     <div class="row">
       <label>2. 申请人电话:</label>
-      <input  class="txt" type="text" name="ap_phone" value="1877877988"/>    	
+      <input  class="txt" type="text" name="ap_phone" />    	
     </div>
     <div class="row">
       <label>3. 单位负责人:</label>
-      <input  class="txt" type="text" name="fz_user" value="单位负责人"/>
+      <input  class="txt" type="text" name="fz_user" />
 
     </div>
     <div class="row">
       <label>4. 单位负责人电话:</label>
-      <input  class="txt" type="text" name="fz_phone"  value="1877877988"/>    	
+      <input  class="txt" type="text" name="fz_phone" />    	
     </div>
     <div class="row">
 
@@ -79,15 +79,15 @@ $(function(){
     </div>
     <div class="row">
       <label>2. 类别:</label>
-	<input  class="txt" type="text" name="ac_type" value="创新创业文化活动"/>    	
+	<input  class="txt" type="text" name="ac_type" />    	
     </div>
     <div class="row">
       <label>3. 组织部门:</label>
-      <input class="txt" type="text" name="organization" value="求索工作室"/>
+      <input class="txt" type="text" name="organization"/>
     </div>
     <div class="row">
       <label>4. 活动名称:</label>
-      <input class="txt" style="width:400px"  type="text" name="activity" value="交流活动"/>
+      <input class="txt" style="width:400px"  type="text" name="activity"/>
     </div>
     </fieldset>
     <input type="button" onclick="sub()" class="send" value="提交" />

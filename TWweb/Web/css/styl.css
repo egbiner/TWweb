@@ -12,7 +12,7 @@ body,ul,li
 
 ul,li{
 	list-style: none;	/*去掉列表中的圆点*/
-	float: left;	/*使多个li标签横向排*/
+	
 	
 }
 a { text-decoration:none;
@@ -145,6 +145,7 @@ body{background:url(../img/bg.gif) repeat-x;}
 }
 .menu ul{width: 100%;}
 .menu ul li{
+	
 	width: 98%;
 	line-height: 45px;
 	margin-left: 2%;
@@ -246,7 +247,7 @@ body{background:url(../img/bg.gif) repeat-x;}
 	
 	}
 .friendly-link ul{width: 100%; min-height: 20px;padding: 7px;}
-.friendly-link ul li{width: 100px;}	
+.friendly-link ul li{width: 100px;float: left;	/*使多个li标签横向排*/}	
 .friendly-link a{
 	color: #000000;
 	font-size: 14px;	
@@ -259,6 +260,7 @@ body{background:url(../img/bg.gif) repeat-x;}
 .webo{width: 100%;float: right;margin-bottom: 8px; }
 .webo-link{width: 80%; margin-left:15%;}
 .webo ul li{
+	float: left;	/*使多个li标签横向排*/
 	margin-left: 40px;
 	width: 100px;
 	text-align: center;
