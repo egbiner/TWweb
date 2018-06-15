@@ -10,6 +10,8 @@
     <link href="css/admin_index2.css" rel="stylesheet" />
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/do_ajax.js"></script>
+    <script src="../Web/js/layer.js"></script>
+    <link href="../Web/css/layer.css" rel="stylesheet" />
 </head>
 <body>
     <div class="rt_content">
@@ -21,10 +23,7 @@
             <th>回执码</th>
             <th>申请使用日期</th>
             <th>具体使用时间</th>
-            <th>组织</th>
             <th>活动名称</th>
-            <th>级别</th>
-            <th>类别</th>
             <th>申请人</th>
             <th>进行状况</th>
             <th colspan="5">操作</th>
@@ -35,10 +34,7 @@
             <td><%=t.Rows[i]["id"] %></td>
             <td><%=((DateTime)t.Rows[i]["use_time_start"]).ToString("yyyy-MM-dd")%></td>
             <td><%=((DateTime)t.Rows[i]["use_time_start"]).ToString("t")+"-"+((DateTime)t.Rows[i]["use_time_end"]).ToString("t")%></td>
-            <td><%=t.Rows[i]["organization"] %></td>
             <td><%=t.Rows[i]["activity"] %></td>
-            <td><%=t.Rows[i]["or_type"] %></td>
-            <td><%=t.Rows[i]["ac_type"] %></td>
             <td><%=t.Rows[i]["ap_user"] %></td>
             <%if (int.Parse(t.Rows[i]["status"].ToString()) == 0) { %>
                 <td style="color:blue">待处理</td>
@@ -51,13 +47,13 @@
                 <a href="javascript:opendetail(<%=t.Rows[i]["id"] %>)">查看详细</a>
             </td>
             <td>
-                <a href="javascript:manage('reset', '<%=t.Rows[i]["id"] %>')">重置</a>
+                <a style="color:blue" href="javascript:manage('reset', '<%=t.Rows[i]["id"] %>')">重置</a>
             </td>
             <td>
-                <a href="javascript:manage('pass', '<%=t.Rows[i]["id"] %>')">通过</a>
+                <a style="color:green" href="javascript:manage('pass', '<%=t.Rows[i]["id"] %>')">通过</a>
             </td>
             <td>
-                <a href="javascript:dis_prompt(<%=t.Rows[i]["id"] %>)">拒绝</a>
+                <a style="color:orangered" href="javascript:dis_prompt(<%=t.Rows[i]["id"] %>)">拒绝</a>
             </td>
             <td>
                 <a href="javascript:manage('del', '<%=t.Rows[i]["id"] %>')" class="del_but">删除</a>
@@ -67,15 +63,24 @@
     </table>
         <script>
             function dis_prompt(id) {
-                var reason = prompt("请输入拒绝原因", "/时间冲突/");
+                var reason = prompt("请输入拒绝原因", "");
                 if (reason!=null && reason!="")
                 {
                     manage("reject", id + "$" + reason);
                 }
             }
-           function opendetail(id){
-                    window.open('applyform_modle.aspx?id='+id, 'new', 'location=no, toolbar=no,height=770,width=720');
-                    return false;
+            function opendetail(id) {
+                layer.open({
+                    title:'申请详情',
+                    type: 2,
+                    area: ['720px', '80%'], //宽高
+                    shade: 0,
+                    content: 'applyform_modle.aspx?id='+id,
+                    maxmin: true,
+                });
+
+                    //window.open('applyform_modle.aspx?id='+id, 'new', 'location=no, toolbar=no,height=770,width=720');
+                   // return false;
            }
             function manage(action,id) {
                 switch (action) {

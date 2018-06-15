@@ -35,7 +35,7 @@ $(function(){
       <label> 回执码:</label>
       <input class="txt" type="text" id="recode" />
     </div>
-        <input type="button" onclick="search()" class="send" value="提交" />
+        <input type="button" onclick="search()" class="send" value="查询" />
     </fieldset>
     <fieldset>
     <legend>回执信息</legend>

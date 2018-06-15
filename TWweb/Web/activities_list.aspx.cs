@@ -7,8 +7,8 @@ namespace TWweb.Web
 {
     public partial class activities_list : System.Web.UI.Page
     {
-        public DataTable dt_ing;
-        public DataTable dt_ed;
+        public DataTable dt_ing = null;
+        public DataTable dt_ed = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             //获取未过期的活动

@@ -25,7 +25,7 @@ $(function(){
 <body>
     <br />
 <div class="exlist">
-  <div class="exlist_title"><img src="images/paper-clip.png" /></div>
+  <div class="exlist_title"><img src="img/paper-clip.png" /></div>
   <div id="title">
     <legend>申请成功</legend>
   </div>

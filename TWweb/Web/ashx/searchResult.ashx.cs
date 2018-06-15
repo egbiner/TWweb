@@ -25,7 +25,8 @@ namespace TWweb.Web.ashx
                     new SqlParameter("@id", recode));
 
                 string atag = "<br><a href='javascript:opendetail(" + dt.Rows[0]["id"] + ")'>查看申请表</a>";
-                string tips = "<p>您好"+ dt.Rows[0]["ap_user"] + "!,您申请的\" "+ dt.Rows[0]["activity"] + " \"已经处理</p>";
+                //string tips = "<p>您好"+ dt.Rows[0]["ap_user"] + "!,您申请的\" "+ dt.Rows[0]["activity"] + " \"已经处理</p>";
+                string tips = "<p>您好！您申请的\" "+ dt.Rows[0]["activity"] + " \"已经处理</p>";
                 if (dt != null)
                     status = Convert.ToInt32(dt.Rows[0]["status"]);
                 if (status == 1)

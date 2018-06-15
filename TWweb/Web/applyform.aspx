@@ -12,8 +12,10 @@
 <script type="text/javascript" src="js/jquery.ui.datepicker-zh-CN.js"></script><!--星期中文化-->                                                                               
 <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
 <script type="text/javascript" src="js/jquery-ui-timepicker-zh-CN.js"></script><!--文字中文化--> 
+<link href="css/layer.css" rel="stylesheet" />
+<script src="js/layer.js"></script>
 
-<script>
+<script type="text/javascript">
 $(function(){
 		   $("div").click(function(){
 		   $(this).addClass("select");		
@@ -95,6 +97,18 @@ $(function(){
 </div>
     <script type="text/javascript">
         function sub() {
+            //layer.open({
+            //    title:'申请须知',
+            //    type: 1,
+            //    shade: 0,
+            //    area: ['600px', '420px'], //宽高
+            //    content: '<div style="padding:20px;line-height:30px"><p>1、	仔细阅读《演艺厅使用注意事项》，凡提交《演艺厅使用登记表》即默认同意《演艺厅使用注意事项》的规章制度，请爱护演艺厅的设施设备，如有损坏，照价赔偿。</p><p>2、	现场不允许拉横幅、贴装饰品。</p><p>3、	提前致电了解使用空挡，填表后一式两份交到大学生活动中心406文如冰老师处（存档，0773-2328357）和大学生艺术团团长于梦龙处（安排开门，15078380908）</p></div>',
+            //    closeBtn: 0,
+            //    btn:'确定',
+            //    btnAlign: 'c',
+            //    maxmin: true,
+            //});
+
             $.ajax({
                 type: "POST",
                 url: 'ashx/apply.ashx',
@@ -108,7 +122,7 @@ $(function(){
             error: function () {
                 alert("服务器睡着了？")
             }
-        })
+            })
         }
     </script>
 </body>

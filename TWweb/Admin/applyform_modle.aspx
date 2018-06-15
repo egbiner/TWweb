@@ -47,9 +47,17 @@ $(function(){
       <label>4. 单位负责人电话:</label>
       <input  class="txt" type="text" name="fz_phone"  value="<%=dt.Rows[0]["fz_phone"] %>"/>    	
     </div>
+        <div class="row">
+      <label>5. 活动联系人:</label>
+      <input  class="txt" type="text" name="fz_phone"  value="<%=dt.Rows[0]["ac_linkman"] %>"/>    	
+    </div>
+        <div class="row">
+      <label>6. 活动联系人电话:</label>
+      <input  class="txt" type="text" name="fz_phone"  value="<%=dt.Rows[0]["ac_linkman_phone"] %>"/>    	
+    </div>
     <div class="row">
 
-       <label>5.活动时间:</label>
+       <label>7.活动时间:</label>
         <input name="act_start_time" type="text"  class="txt" value="<%=((DateTime)dt.Rows[0]["use_time_start"]).ToString("yyyy-MM-dd HH:mm")%>" readonly="readonly" />-
         <input name="act_stop_time" type="text" class="txt" value="<%=((DateTime)dt.Rows[0]["use_time_end"]).ToString("yyyy-MM-dd HH:mm")%>"  readonly="readonly" />
     </div>
@@ -57,24 +65,45 @@ $(function(){
     </fieldset>
     <fieldset>
     <legend>活动信息</legend>
+        <div class="row">
+      <label>1. 活动名称:</label>
+      <input class="txt"   type="text" name="activity" value="<%=dt.Rows[0]["activity"] %>"/>
+    </div>
+   
     <div class="row">
-      <label>1. 级别:</label>
-        <input class="txt" type="text" name="or_type" value="<%=dt.Rows[0]["or_type"] %>"/>
+      <label>2. 活动参与人数:</label>
+	<input  class="txt" type="text" name="ac_type" value="<%=dt.Rows[0]["participants_num"] %>"/>    	
+    </div> 
+        <div class="row">
+      <label>3. 主要出席人员姓名及其职务:</label>
+        <input class="txt" style="width:260px" type="text" name="or_type" value="<%=dt.Rows[0]["main_attend"] %>"/>
 
     </div>
     <div class="row">
-      <label>2. 类别:</label>
-	<input  class="txt" type="text" name="ac_type" value="<%=dt.Rows[0]["ac_type"] %>"/>    	
+      <label>4. 需要设备:</label>
+      <input class="txt" style="width:400px" type="text" name="organization" value="<%=dt.Rows[0]["device_need"] %>"/>
     </div>
-    <div class="row">
-      <label>3. 组织部门:</label>
-      <input class="txt" type="text" name="organization" value="<%=dt.Rows[0]["organization"] %>"/>
-    </div>
-    <div class="row">
-      <label>4. 活动名称:</label>
-      <input class="txt" style="width:400px"  type="text" name="activity" value="<%=dt.Rows[0]["activity"] %>"/>
-    </div>
+    
     </fieldset>
+
+     <fieldset>
+    <legend>其他信息</legend>
+        <div class="row">
+      <label>1. 申请事由:</label>
+      <input class="txt" style="width:300px"  type="text" name="activity" value="<%=dt.Rows[0]["ap_reason"] %>"/>
+    </div>
+    <div class="row">
+      <label>2. 申请单位意见:</label>
+        <input class="txt" style="width:300px" type="text" name="or_type" value="<%=dt.Rows[0]["ap_opinion"] %>"/>
+
+    </div>
+    <div class="row">
+      <label>3. 该时间段教室是否有空:</label>
+	<input  class="txt" type="text" name="ac_type" value="<%= Convert.ToInt32(dt.Rows[0]["isNullRoom"]) == 0 ? "否" : "是" %>"/>    	
+    </div>
+    
+    </fieldset>
+
         <fieldset>
     <legend>处理状态</legend>
         <div class="row">
@@ -90,7 +119,6 @@ $(function(){
                 <p><%=((DateTime)dt.Rows[0]["handle_time"]).ToString("F") %></p>
             <%} %>
             </div>
-	       	
         </div>
     </fieldset>
 </div>

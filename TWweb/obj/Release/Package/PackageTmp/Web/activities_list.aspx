@@ -14,19 +14,20 @@
 	<ul>
         <br />
 		<div>
-			<h3 id="2018"><%=((DateTime)dt_ing.Rows[0]["use_time_start"]).ToString("yyyy")%></h3>
-        <%for (int i = 0; i < dt_ing.Rows.Count; i++)
-            { %>
-            <li>
-			<span><%=((DateTime)dt_ing.Rows[i]["use_time_start"]).ToString("M") %></span>
+        <%if (dt_ing.Rows.Count!= 0){%>
+			    <h3 id="2018"><%=((DateTime)dt_ing.Rows[0]["use_time_start"]).ToString("yyyy")%></h3>
+            <%for (int i = 0; i < dt_ing.Rows.Count; i++)
+                    { %>
+                <li>
+			    <span><%=((DateTime)dt_ing.Rows[i]["use_time_start"]).ToString("M") %></span>
                 
-			<p><span><%=dt_ing.Rows[i]["activity"] %><br />19:00-18:00</span></p>
-			</li>
-        <%} %>
-		
+			    <p><span><%=dt_ing.Rows[i]["activity"] %><br /><%=((DateTime)dt_ing.Rows[i]["use_time_start"]).ToString("t")+"-"+((DateTime)dt_ing.Rows[i]["use_time_end"]).ToString("t")%></span></p>
+			    </li>
+            <%} %>
+		<%} %>
 		</div>
 		<div>
-			<h3 id="2019"><%=Convert.ToInt32(((DateTime)dt_ing.Rows[0]["use_time_start"]).ToString("yyyy"))+1%></h3>
+			    <h3 id="2019">More</h3>
 			<li>
 			<span></span>
 			<p><span>更多活动,敬请期待~</span></p>

@@ -21,7 +21,7 @@ namespace TWweb.Admin
                 return;
             }
             //按时间排序就好了？
-            t = SqlHelper.ExecuteDataTable("select * from yanyiting order by use_time_start DESC");
+            t = SqlHelper.ExecuteDataTable("select * from yanyiting order by status,use_time_start DESC");
         }
     }
 }
