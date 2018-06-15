@@ -37,15 +37,22 @@ $(function(){
      <div class="row">
       <label>2. 可通过此回执码可查询申请状态</label>
     </div>
-    <div class="row">
+<%--    <div class="row">
       <label>3. 温馨提示:可用手机拍照记下回执码</label>
-    </div>
+    </div>--%>
     </fieldset>
     <fieldset>
     <legend>回执码</legend>
      <div class="row">
       <label></label>
       <h1 style="text-align:center"><%=re_code %></h1>
+    </div>
+    </fieldset>
+     <fieldset>
+    <legend>打印文件下载</legend>
+     <div class="row">
+      <label></label>
+      <p style="text-align:center"><a target="_blank" href="<%=url %>" ><%=filename %></a></p>
     </div>
     </fieldset>
 </div>

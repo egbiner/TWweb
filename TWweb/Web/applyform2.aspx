@@ -39,13 +39,38 @@
                     success: function (data) {
                         if (data == "error")
                             alert("请检查表单内容是否填写完整！")
-                        else
-                            location.href = "recode.aspx?recode=" + data;
+                        else {
+                            getDoc(data);
+                            wait();
+                        }
                     },
                     error: function () {
-                        alert("服务器er")
+                        alert("服务器500")
                     }
                 });
+            }
+
+            function getDoc(id) {
+                $.ajax({
+                    type: "POST",
+                    url: 'ashx/getDoc.ashx',
+                    data: { "id": id },
+                    success: function (data) {
+                        if (data == "error")
+                            alert("申请成功，申请人或者活动名存在非法字符!");
+                        else
+                            location.href = "recode.aspx?recode=" + id;
+                    },
+                    error: function () {
+                        alert("服务器500")
+                    }
+                });
+            }
+
+            function wait() {
+                 layer.msg('正在快马加鞭,请稍等 ^_^', {
+                    time: 3000, 
+                  });
             }
         </script>
 	</head>

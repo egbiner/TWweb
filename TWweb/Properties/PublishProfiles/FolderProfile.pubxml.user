@@ -740,10 +740,10 @@
       <publishTime>06/15/2018 13:07:43</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>06/15/2018 14:55:01</publishTime>
+      <publishTime>06/15/2018 18:57:43</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>06/15/2018 14:55:01</publishTime>
+      <publishTime>06/15/2018 18:57:43</publishTime>
     </File>
     <File Include="bin/LitJson.dll">
       <publishTime>04/07/2018 13:29:50</publishTime>
@@ -785,10 +785,10 @@
       <publishTime>01/14/2018 22:14:24</publishTime>
     </File>
     <File Include="bin/TWweb.dll">
-      <publishTime>06/15/2018 14:55:04</publishTime>
+      <publishTime>06/15/2018 19:03:07</publishTime>
     </File>
     <File Include="bin/TWweb.pdb">
-      <publishTime>06/15/2018 14:55:04</publishTime>
+      <publishTime>06/15/2018 19:03:07</publishTime>
     </File>
     <File Include="index.aspx">
       <publishTime>05/31/2018 23:46:00</publishTime>
@@ -803,13 +803,16 @@
       <publishTime>06/15/2018 07:46:00</publishTime>
     </File>
     <File Include="Web/applyform2.aspx">
-      <publishTime>06/15/2018 14:44:13</publishTime>
+      <publishTime>06/15/2018 18:56:43</publishTime>
     </File>
     <File Include="Web/apply_search.aspx">
       <publishTime>06/14/2018 23:03:38</publishTime>
     </File>
     <File Include="Web/ashx/apply.ashx">
       <publishTime>06/01/2018 10:19:00</publishTime>
+    </File>
+    <File Include="Web/ashx/getDoc.ashx">
+      <publishTime>06/15/2018 17:30:38</publishTime>
     </File>
     <File Include="Web/ashx/searchResult.ashx">
       <publishTime>06/01/2018 10:16:59</publishTime>
@@ -1001,7 +1004,7 @@
       <publishTime>01/14/2018 22:14:23</publishTime>
     </File>
     <File Include="Web/recode.aspx">
-      <publishTime>06/01/2018 11:10:44</publishTime>
+      <publishTime>06/15/2018 17:55:44</publishTime>
     </File>
     <File Include="Web/upload/image/2.jpg">
       <publishTime>01/14/2018 22:14:23</publishTime>
@@ -1031,7 +1034,7 @@
       <publishTime>01/14/2018 22:14:23</publishTime>
     </File>
     <File Include="Web/yanyiting.aspx">
-      <publishTime>06/15/2018 14:53:49</publishTime>
+      <publishTime>06/15/2018 19:02:36</publishTime>
     </File>
   </ItemGroup>
 </Project>
